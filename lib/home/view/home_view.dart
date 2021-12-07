@@ -65,7 +65,7 @@ class _HomeViewState extends State<HomeView> {
                 onPressed: () {},
                 child: const Text('매출처 추가', style: TextStyle(fontSize: 12.0, color: Colors.black)),
                 style: OutlinedButton.styleFrom(
-                    primary: btnBorderGrey2,
+                    primary: btnBorderGrey2Color,
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -112,7 +112,7 @@ class _HomeViewState extends State<HomeView> {
                 onPressed: () {},
                 child: const Text('매입처 추가', style: TextStyle(fontSize: 12.0, color: Colors.black),),
                 style: OutlinedButton.styleFrom(
-                    primary: btnBorderGrey2,
+                    primary: btnBorderGrey2Color,
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     padding: const EdgeInsets.symmetric(horizontal: 5),

@@ -24,7 +24,7 @@ class _SpecsEasyViewState extends State<SpecsEasyView> {
   void initState() {
     super.initState();
     isOpen = false;
-  //임시
+    //임시
     for(int i=0;i<5;i++){
       _contents.add(['3연동 자동중문', 'PTG1235778', '반촌현장', '1200*800', 1, 22200000, 22200000, 220000, '삭제']);
       _isSelected.add(false);
@@ -58,8 +58,8 @@ class _SpecsEasyViewState extends State<SpecsEasyView> {
                 children: [
                   Column(
                     children: [
-                      Text('거래명세서', style: TextStyle(color: hintTextGrey.withOpacity(0.8), fontSize: 40, fontWeight: FontWeight.bold),),
-                      Text('(공급받는자 보관용)', style: TextStyle(color: hintTextGrey.withOpacity(0.5), fontWeight: FontWeight.bold),)
+                      Text('거래명세서', style: TextStyle(color: hintTextGreyColor.withOpacity(0.8), fontSize: 40, fontWeight: FontWeight.bold),),
+                      Text('(공급받는자 보관용)', style: TextStyle(color: hintTextGreyColor.withOpacity(0.5), fontWeight: FontWeight.bold),)
                     ],
                   ),
                   const SizedBox(height: 30,),
@@ -110,7 +110,7 @@ class _SpecsEasyViewState extends State<SpecsEasyView> {
           height: 80,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(7),
-              color: primaryBlue
+              color: primaryBlueColor
           ),
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Row(
@@ -177,7 +177,7 @@ class _SpecsEasyViewState extends State<SpecsEasyView> {
         height: 150,
         padding: const EdgeInsets.all(30),
         decoration: const BoxDecoration(
-          color: btnGrey,
+          color: btnGreyColor,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(5),
             bottomLeft: Radius.circular(5),

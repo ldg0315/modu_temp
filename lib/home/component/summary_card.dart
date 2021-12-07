@@ -60,9 +60,9 @@ class SummaryCard extends StatelessWidget {
                   Row(
                     children: [
                       Text('(', style: greyBold),
-                      Text('수신', style: TextStyle(color: primaryBlue, fontWeight: FontWeight.bold),),
+                      Text('수신', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold),),
                       Text(' | ', style: greyBold),
-                      Text('발신', style: TextStyle(color: textOrange, fontWeight: FontWeight.bold),),
+                      Text('발신', style: TextStyle(color: textOrangeColor, fontWeight: FontWeight.bold),),
                       Text(')', style: greyBold)
                     ],
                   )
@@ -156,7 +156,7 @@ class UncheckedElement extends StatelessWidget {
       height: 65,
       decoration: BoxDecoration(
           color: Colors.grey[100],
-          border: Border.all(color: lightGrey)
+          border: Border.all(color: lightGreyColor)
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -166,7 +166,7 @@ class UncheckedElement extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('$received', style: TextStyle(color: primaryBlue, fontWeight: FontWeight.bold),),
+              Text('$received', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold),),
               Text(' | '),
               Text('$sent', style: TextStyle(color: Color(0xffee6d00), fontWeight: FontWeight.bold),)
             ],

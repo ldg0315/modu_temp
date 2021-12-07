@@ -30,17 +30,17 @@ class _SpecsTableState extends State<SpecsTable> {
       children: [
         TableRow(
             decoration: const BoxDecoration(
-                border: Border(bottom: BorderSide(color: lightGrey))),
+                border: Border(bottom: BorderSide(color: lightGreyColor))),
             children: widget.titles
                 .map((title) => Container(
-                child: Text(title, style: const TextStyle(color: smallTitleBlue, fontWeight: FontWeight.bold),),
+                child: Text(title, style: const TextStyle(color: smallTitleBlueColor, fontWeight: FontWeight.bold),),
                 height: 50,
                 alignment: Alignment.center))
                 .toList()),
         for (int j = 0; j < widget.contents.length; j++)
           TableRow(
               decoration:
-              j % 2 != 0 ? const BoxDecoration(color: innerCellBlue) : null,
+              j % 2 != 0 ? const BoxDecoration(color: innerCellBlueColor) : null,
               children: [
                 for (int i = 0; i < widget.contents[j].length; i++)
                   if (i == 1)
@@ -54,33 +54,33 @@ class _SpecsTableState extends State<SpecsTable> {
                         },
                         child: widget.isSelected[j]
                             ? Container(
-                                decoration: BoxDecoration(
-                                    border: Border.all(color: lightGrey, width: 2),
-                                    borderRadius: const BorderRadius.all(Radius.circular(5))
-                                ),
-                                child: TextField(
-                                  controller: TextEditingController()
-                                    ..text = widget.contents[j][i].toString(),
-                                  decoration: const InputDecoration(border: OutlineInputBorder(borderSide: BorderSide.none),),
-                                  onChanged: (value) {
-                                    int newInt = int.parse(value);
-                                    widget.contents[j][i] = newInt;
-                                  },
-                                  textAlign: TextAlign.center,
-                                  textAlignVertical: TextAlignVertical.top,
-                                ),
-                                height: 40,
-                                width: 40,
-                                alignment: Alignment.center,
-                              )
-                            : _TextContainer(title: widget.contents[j][i].toString(), color: hintTextGrey)
+                          decoration: BoxDecoration(
+                              border: Border.all(color: lightGreyColor, width: 2),
+                              borderRadius: const BorderRadius.all(Radius.circular(5))
+                          ),
+                          child: TextField(
+                            controller: TextEditingController()
+                              ..text = widget.contents[j][i].toString(),
+                            decoration: const InputDecoration(border: OutlineInputBorder(borderSide: BorderSide.none),),
+                            onChanged: (value) {
+                              int newInt = int.parse(value);
+                              widget.contents[j][i] = newInt;
+                            },
+                            textAlign: TextAlign.center,
+                            textAlignVertical: TextAlignVertical.top,
+                          ),
+                          height: 40,
+                          width: 40,
+                          alignment: Alignment.center,
                         )
+                            : _TextContainer(title: widget.contents[j][i].toString(), color: hintTextGreyColor)
+                    )
                   else if (i == 8)
                       InkWell(
-                        onTap: () {},
-                        child: _TextContainer(title: widget.contents[j][i], color: textOrange))
-                  else
-                    _TextContainer(title: widget.contents[j][i].toString(), color: hintTextGrey)
+                          onTap: () {},
+                          child: _TextContainer(title: widget.contents[j][i], color: textOrangeColor))
+                    else
+                      _TextContainer(title: widget.contents[j][i].toString(), color: hintTextGreyColor)
               ]),
       ],
     );

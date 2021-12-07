@@ -4,7 +4,6 @@ import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/home/view/home_view.dart';
 import 'package:modu_temp/login/view/login_view.dart';
 import 'package:modu_temp/product/view/new_product_view.dart';
-import 'package:modu_temp/specs/view/specs_classic_view.dart';
 import 'package:modu_temp/specs/view/specs_view.dart';
 
 class SideMenu extends StatelessWidget {
@@ -16,7 +15,7 @@ class SideMenu extends StatelessWidget {
       width: 200,
       child: Drawer(
         child: Container(
-          color: btnNavy,
+          color: btnNavyColor,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -48,8 +47,8 @@ class SideMenu extends StatelessWidget {
                 child: SpecsView(),
               ),
               SideListTile(
-                  icon: Icons.account_box_outlined,
-                  title: '발주서 관리',
+                icon: Icons.account_box_outlined,
+                title: '발주서 관리',
               ),
               SideListTile(icon: Icons.account_box_outlined, title: '견적서 관리'),
               SideListTile(icon: Icons.headset_mic_outlined, title: '고객센터'),

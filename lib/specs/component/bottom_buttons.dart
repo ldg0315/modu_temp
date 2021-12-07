@@ -18,9 +18,9 @@ class BottomButtons extends StatelessWidget {
             children: [
               OutlinedButton(
                 onPressed: (){},
-                child: const Text('초기화하기', style: TextStyle(color: hintTextGrey, fontWeight: FontWeight.bold),),
+                child: const Text('초기화하기', style: TextStyle(color: hintTextGreyColor, fontWeight: FontWeight.bold),),
                 style: OutlinedButton.styleFrom(
-                    primary: btnBorderGrey,
+                    primary: btnBorderGreyColor,
                     fixedSize: const Size(140, 50),
                     backgroundColor: Colors.white
                 ),
@@ -31,11 +31,11 @@ class BottomButtons extends StatelessWidget {
                   context.read<SpecsMode>().changeMode();
                 },
                 child: context.watch<SpecsMode>().isClassic
-                    ? const Text('이지모드', style: TextStyle(color: primaryBlue, fontWeight: FontWeight.bold))
-                    : const Text('클래식모드', style: TextStyle(color: primaryBlue, fontWeight: FontWeight.bold))
+                    ? const Text('이지모드', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold))
+                    : const Text('클래식모드', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold))
                 ,
                 style: OutlinedButton.styleFrom(
-                    primary: btnBorderGrey,
+                    primary: btnBorderGreyColor,
                     fixedSize: const Size(140, 50),
                     backgroundColor: Colors.white
                 ),
@@ -46,9 +46,9 @@ class BottomButtons extends StatelessWidget {
             onPressed: (){},
             child: const Text('전송하기', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
             style: OutlinedButton.styleFrom(
-                primary: primaryBlue,
+                primary: primaryBlueColor,
                 fixedSize: const Size(280, 50),
-                backgroundColor: primaryBlue
+                backgroundColor: primaryBlueColor
             ),
           )
         ],

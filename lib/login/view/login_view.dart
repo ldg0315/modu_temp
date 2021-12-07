@@ -19,13 +19,13 @@ class _LoginScreenState extends State<LoginView> {
       body: Stack(
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width,
               child: Image.asset('assets/images/back.jpg', fit: BoxFit.cover,)
           ),
           Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50)
+                borderRadius: BorderRadius.circular(50)
             ),
             child: SizedBox(
               child: Row(
@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginView> {
                     height: 400,
                     width: 400,
                     child: ClipRRect(
-                        child: Image.asset('assets/images/drawing.png', fit: BoxFit.cover),
+                      child: Image.asset('assets/images/drawing.png', fit: BoxFit.cover),
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
                     ),
                   ),
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginView> {
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
-                      color: Colors.white
+                        color: Colors.white
                     ),
                     child: Column(
                       children: [
@@ -62,13 +62,13 @@ class _LoginScreenState extends State<LoginView> {
                             labelText: '이메일 주소를 입력하세요',
                             labelStyle: TextStyle(color: Colors.grey),
                             filled: true,
-                            fillColor: innerCellBlue,
-                            floatingLabelStyle: TextStyle(color: primaryBlue),
+                            fillColor: innerCellBlueColor,
+                            floatingLabelStyle: TextStyle(color: primaryBlueColor),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black12)
+                                borderSide: BorderSide(color: Colors.black12)
                             ),
                             focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: primaryBlue, width: 2)
+                                borderSide: BorderSide(color: primaryBlueColor, width: 2)
                             ),
                           ),
                         ),
@@ -78,18 +78,18 @@ class _LoginScreenState extends State<LoginView> {
                         TextFormField(
                           obscureText: true,
                           decoration: const InputDecoration(
-                              prefixIcon: Icon(Icons.lock_outline, color: Colors.grey),
-                              border: OutlineInputBorder(),
-                              labelText: '패스워드를 입력하세요',
-                              labelStyle: TextStyle(color: Colors.grey),
-                              filled: true,
-                              fillColor: innerCellBlue,
-                            floatingLabelStyle: TextStyle(color: primaryBlue),
+                            prefixIcon: Icon(Icons.lock_outline, color: Colors.grey),
+                            border: OutlineInputBorder(),
+                            labelText: '패스워드를 입력하세요',
+                            labelStyle: TextStyle(color: Colors.grey),
+                            filled: true,
+                            fillColor: innerCellBlueColor,
+                            floatingLabelStyle: TextStyle(color: primaryBlueColor),
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black12)
                             ),
                             focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: primaryBlue, width: 2)
+                                borderSide: BorderSide(color: primaryBlueColor, width: 2)
                             ),
                           ),
                         ),
@@ -107,12 +107,12 @@ class _LoginScreenState extends State<LoginView> {
                                       });
                                     }),
                                 Row(
-                                   children: const [
-                                     Text("계정을 ", style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),),
-                                     Text("기억", style: TextStyle(fontSize: 12.0, color: Colors.indigo, fontWeight: FontWeight.bold),),
-                                     Text('합니다', style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),)
-                                   ],
-                                 ),
+                                  children: const [
+                                    Text("계정을 ", style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),),
+                                    Text("기억", style: TextStyle(fontSize: 12.0, color: Colors.indigo, fontWeight: FontWeight.bold),),
+                                    Text('합니다', style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),)
+                                  ],
+                                ),
                               ],
                             ),
                             Row(
@@ -133,19 +133,19 @@ class _LoginScreenState extends State<LoginView> {
                           child: const Text("로그인", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
                           style: ElevatedButton.styleFrom(
                               fixedSize: const Size(400, 40),
-                              primary: loginBtnGrey,
-                              side: const BorderSide(width: 1.0, color: loginBtnBorderGrey),
+                              primary: loginBtnGreyColor,
+                              side: const BorderSide(width: 1.0, color: loginBtnBorderGreyColor),
                               elevation: 0.0
                           ),
                         ),
                         const SizedBox(height: 10,),
                         ButtonTheme(
                             child: ElevatedButton(
-                                onPressed: (){},
-                                child: const Text("무료로 시작해보기"),
+                              onPressed: (){},
+                              child: const Text("무료로 시작해보기"),
                               style: ElevatedButton.styleFrom(
                                   fixedSize: const Size(400, 40),
-                                primary: primaryBlue,
+                                  primary: primaryBlueColor,
                                   elevation: 0.0
                               ),
                             )

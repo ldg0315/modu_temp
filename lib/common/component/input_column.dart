@@ -38,10 +38,10 @@ class InputField extends StatelessWidget {
         labelText: hint,
         fillColor: fillColor,
         filled: true,
-        floatingLabelStyle: TextStyle(color: primaryBlue),
+        floatingLabelStyle: TextStyle(color: primaryBlueColor),
         border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
         enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: borderColor)),
-        focusedBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: primaryBlue, width: 2)),
+        focusedBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: primaryBlueColor, width: 2)),
       ),
       //controller: controller,
     );

@@ -19,7 +19,7 @@ class _RoundedCheckBoxState extends State<RoundedCheckBox> {
     return Checkbox(
       value: widget.isChecked,
       onChanged: widget.changed,
-      activeColor: primaryBlue,
+      activeColor: primaryBlueColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
     );
   }

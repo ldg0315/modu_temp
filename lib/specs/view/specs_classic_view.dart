@@ -23,8 +23,8 @@ class SpecsClassicView extends StatelessWidget {
             width: 1045,
             padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 5),
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(10))
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(10))
             ),
             child: Column(
               children: [
@@ -79,8 +79,8 @@ class SpecsClassicView extends StatelessWidget {
               width: 235,
               height: 100,
               decoration: BoxDecoration(
-                border: Border.all(color: tradeBorderGrey),
-                color: innerCellBlue,
+                border: Border.all(color: tradeBorderGreyColor),
+                color: innerCellBlueColor,
               ),
             ),
           ],
@@ -93,8 +93,8 @@ class SpecsClassicView extends StatelessWidget {
               width: 320,
               height: 150,
               decoration: BoxDecoration(
-                border: Border.all(color: tradeBorderGrey),
-                color: innerCellBlue,
+                border: Border.all(color: tradeBorderGreyColor),
+                color: innerCellBlueColor,
               ),
             ),
             _TextContainer(title: specsModel.totalPrice, width: 320, height: 100, isTitle: false),
@@ -202,8 +202,8 @@ class SpecsClassicView extends StatelessWidget {
           width: 635,
           height: 50,
           decoration: BoxDecoration(
-              border: Border.all(color: tradeBorderGrey),
-            color: Colors.white
+              border: Border.all(color: tradeBorderGreyColor),
+              color: Colors.white
           ),
         ),
         const _TextContainer(title: '합계', width: 130, height: 50, isTitle: true),
@@ -229,16 +229,16 @@ class SpecsClassicView extends StatelessWidget {
   Row bottomRow() {
     return Row(
       mainAxisSize: MainAxisSize.min,
-          children: [
-            const _TextContainer(title: '입금', width: 130, height: 50, isTitle: true),
-            const _TextContainer(title: '', width: 185, height: 50, isTitle: false),
-            const _TextContainer(title: '잔금', width: 105, height: 50, isTitle: true),
-            _TextContainer(title: specsModel.balance.toString(), width: 215, height: 50, isTitle: false),
-            const _TextContainer(title: '', width: 130, height: 50, isTitle: false),
-            const _TextContainer(title: '인수자', width: 130, height: 50, isTitle: true),
-            _TextContainer(title: specsModel.underwriter, width: 130, height: 50, isTitle: false),
-          ],
-        );
+      children: [
+        const _TextContainer(title: '입금', width: 130, height: 50, isTitle: true),
+        const _TextContainer(title: '', width: 185, height: 50, isTitle: false),
+        const _TextContainer(title: '잔금', width: 105, height: 50, isTitle: true),
+        _TextContainer(title: specsModel.balance.toString(), width: 215, height: 50, isTitle: false),
+        const _TextContainer(title: '', width: 130, height: 50, isTitle: false),
+        const _TextContainer(title: '인수자', width: 130, height: 50, isTitle: true),
+        _TextContainer(title: specsModel.underwriter, width: 130, height: 50, isTitle: false),
+      ],
+    );
   }
 
 }
@@ -258,8 +258,8 @@ class _TextContainer extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        border: Border.all(color: tradeBorderGrey),
-        color: isTitle?innerCellBlue:Colors.white,
+        border: Border.all(color: tradeBorderGreyColor),
+        color: isTitle?innerCellBlueColor:Colors.white,
       ),
     );
   }
