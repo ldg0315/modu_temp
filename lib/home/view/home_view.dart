@@ -24,33 +24,31 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Spacer(),
-            Container(
-              width: 1000,
-              padding: const EdgeInsets.all(40.0),
-              child: Column(
-                children: [
-                  const Header(isLarge: false,),
-                  const SizedBox(height: 40,),
-                  Row(
-                    children: [
-                      buyersInfo(),
-                      const SizedBox(width: 20,),
-                      sellersInfo(),
-                    ],
-                  )
-                ],
-              ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Spacer(),
+          Container(
+            width: 1000,
+            padding: const EdgeInsets.all(40.0),
+            child: Column(
+              children: [
+                const Header(isLarge: false,),
+                const SizedBox(height: 40,),
+                Row(
+                  children: [
+                    buyersInfo(),
+                    const SizedBox(width: 20,),
+                    sellersInfo(),
+                  ],
+                )
+              ],
             ),
-            const Spacer(),
-            const SideCalendar()
-          ],
-        ),
+          ),
+          const Spacer(),
+          const SideCalendar()
+        ],
       ),
     );
   }
@@ -67,7 +65,7 @@ class _HomeViewState extends State<HomeView> {
                 onPressed: () {},
                 child: const Text('매출처 추가', style: TextStyle(fontSize: 12.0, color: Colors.black)),
                 style: OutlinedButton.styleFrom(
-                    primary: btnBorderGrey2,
+                    primary: btnBorderGrey2Color,
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -114,7 +112,7 @@ class _HomeViewState extends State<HomeView> {
                 onPressed: () {},
                 child: const Text('매입처 추가', style: TextStyle(fontSize: 12.0, color: Colors.black),),
                 style: OutlinedButton.styleFrom(
-                    primary: btnBorderGrey2,
+                    primary: btnBorderGrey2Color,
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     padding: const EdgeInsets.symmetric(horizontal: 5),

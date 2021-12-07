@@ -28,7 +28,7 @@ Column imageColumn() {
             children: [
               const Text('상품이미지', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
               const SizedBox(width: 5,),
-              Text('300x300 사이즈에 최적화되어있습니다.', style: TextStyle(fontSize: 12.0, color: primaryBlue.withOpacity(0.49))),
+              Text('300x300 사이즈에 최적화되어있습니다.', style: TextStyle(fontSize: 12.0, color: primaryBlueColor.withOpacity(0.49))),
             ],
           ),
           OutlinedButton(
@@ -48,7 +48,7 @@ Column imageColumn() {
         height: 200,
         decoration: BoxDecoration(
             color: Colors.grey[100],
-            border: Border.all(color: lightGrey),
+            border: Border.all(color: lightGreyColor),
             borderRadius: const BorderRadius.all(Radius.circular(7))),
         alignment: Alignment.topLeft,
         child: Row(
@@ -102,7 +102,7 @@ Column codeColumn() {
             children: [
               const Text('상품코드', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),),
               const SizedBox(width: 5,),
-              Text('거래처 주문 화면의 해당 상품 목록에 내용이 보여집니다.', style: TextStyle(fontSize: 12.0, color: primaryBlue.withOpacity(0.49)),),
+              Text('거래처 주문 화면의 해당 상품 목록에 내용이 보여집니다.', style: TextStyle(fontSize: 12.0, color: primaryBlueColor.withOpacity(0.49)),),
             ],
           ),
         ],
@@ -111,8 +111,8 @@ Column codeColumn() {
       Container(
         height: 200,
         decoration: BoxDecoration(
-            color: innerCellBlue,
-            border: Border.all(color: lightGrey),
+            color: innerCellBlueColor,
+            border: Border.all(color: lightGreyColor),
             borderRadius: const BorderRadius.all(Radius.circular(7))),
         child: const TextField(
           maxLines: 20,

@@ -19,7 +19,7 @@ class ScreenLayOut extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   const SideMenu(),
-                  Expanded(child: child)
+                  Expanded(child: SingleChildScrollView(child: child))
                 ],
               ),
             ],

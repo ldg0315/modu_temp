@@ -27,7 +27,7 @@ class _SideCalendarState extends State<SideCalendar> {
         width: 300,
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
-            border: Border(left: BorderSide(color: lightGrey)),
+            border: Border(left: BorderSide(color: lightGreyColor)),
             color: Colors.white),
         child: Column(
           children: [
@@ -36,7 +36,7 @@ class _SideCalendarState extends State<SideCalendar> {
               icon: const Icon(Icons.calendar_today_outlined, color: Colors.black, size: 16.0),
               label: const Text('일정 추가하기', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
               style: OutlinedButton.styleFrom(
-                  primary: btnBorderGrey2,
+                  primary: btnBorderGrey2Color,
                   fixedSize: const Size(250, 50),
                   elevation: 0.0,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
@@ -51,7 +51,7 @@ class _SideCalendarState extends State<SideCalendar> {
                   child: Column(
                     children: [
                       Container(width: 260, height: 37, color: const Color(0xfff8f8f8)),
-                      Container(width: 260, height: 170, color: btnBorderGrey2),
+                      Container(width: 260, height: 170, color: btnBorderGrey2Color),
                     ],
                   ),
                 ),
@@ -94,7 +94,7 @@ class _SideCalendarState extends State<SideCalendar> {
       selectedDayPredicate: (day) => isSameDay(day, selectedDay),
       calendarStyle: const CalendarStyle(
           isTodayHighlighted: false,
-          selectedDecoration: BoxDecoration(color: primaryBlue)),
+          selectedDecoration: BoxDecoration(color: primaryBlueColor)),
     );
   }
 }
@@ -119,7 +119,7 @@ class DailyItem extends StatelessWidget {
                 height: 30,
                 alignment: Alignment.center,
                 child: isSell?const Icon(Icons.arrow_forward, color: Colors.white,):const Icon(Icons.arrow_back, color: Colors.white,),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: isSell?primaryBlue:textOrange),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: isSell?primaryBlueColor:textOrangeColor),
               ),
               const SizedBox(width: 10,),
               Column(

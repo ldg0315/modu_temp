@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modu_temp/common/component/top_button.dart';
+import 'package:modu_temp/common/component/button.dart';
 import 'package:modu_temp/constant/color.dart';
 
 class Header extends StatelessWidget {
@@ -14,9 +14,9 @@ class Header extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('네이첸', style: TextStyle(color: primaryBlue, fontSize: 34.0, fontWeight: FontWeight.bold),),
+          const Text('네이첸', style: TextStyle(color: primaryBlueColor, fontSize: 34.0, fontWeight: FontWeight.bold),),
           searchField(),
-          TopButton(title: '대금처리', press: (){}, color: btnNavy)
+          SmallButton(title: '대금처리', press: (){}, width: 130, bgColor: btnNavyColor)
         ],
       ),
     );
@@ -50,7 +50,7 @@ class Header extends StatelessWidget {
             InkWell(
               child: Container(
                 decoration: const BoxDecoration(
-                    color: primaryBlue,
+                    color: primaryBlueColor,
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(10),
                         bottomRight: Radius.circular(10))),

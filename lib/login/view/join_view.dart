@@ -4,6 +4,7 @@ import 'package:modu_temp/common/component/input_column.dart';
 import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/home/view/home_view.dart';
+import 'package:modu_temp/login/component/button.dart';
 
 class JoinView extends StatefulWidget {
   const JoinView({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _JoinViewState extends State<JoinView> {
         child: SingleChildScrollView(
           child: Container(
               padding: const EdgeInsets.all(80.0),
-              color: joinBgColor,
+              color: joinBgColorColor,
               alignment: Alignment.center,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 125),
@@ -39,9 +40,9 @@ class _JoinViewState extends State<JoinView> {
                           const SizedBox(height: 30),
                           Row(
                             children: [
-                              InputColumn(title: '회사명', hint: '회사명을 입력해주세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                              InputColumn(title: '회사명', hint: '회사명을 입력해주세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                               SizedBox(width: 20),
-                              InputColumn(title: '성명', hint: '사용자의 이름을 입력해주세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                              InputColumn(title: '성명', hint: '사용자의 이름을 입력해주세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                             ],
                           ),
                           const SizedBox(height: 20),
@@ -56,16 +57,16 @@ class _JoinViewState extends State<JoinView> {
                                     children: [
                                       const SizedBox(
                                         width: 310,
-                                        child: InputField(hint: '사업장 주소를 입력해주세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                        child: InputField(hint: '사업장 주소를 입력해주세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '주소찾기', press: (){}),
+                                      SmallButton(title: '주소찾기', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12,)
                                     ],
                                   ),
                                   const SizedBox(height: 5),
                                   const SizedBox(
                                     width: 460,
-                                    child: InputField(hint: '상세주소를 입력하세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                    child: InputField(hint: '상세주소를 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   ),
                                 ],
                               ),
@@ -79,16 +80,16 @@ class _JoinViewState extends State<JoinView> {
                                     children: [
                                       const SizedBox(
                                         width: 310,
-                                        child: InputField(hint: '전화번호 입력', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                        child: InputField(hint: '전화번호 입력', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '인증번호 받기', press: (){}),
+                                      SmallButton(title: '인증번호 받기', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                     ],
                                   ),
                                   const SizedBox(height: 5),
                                   const SizedBox(
                                     width: 460,
-                                    child: InputField(hint: '인증번호를 입력하세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                    child: InputField(hint: '인증번호를 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   ),
                                 ],
                               ),
@@ -106,10 +107,10 @@ class _JoinViewState extends State<JoinView> {
                                     children: [
                                       const SizedBox(
                                         width: 310,
-                                        child: InputField(hint: '회사명을 입력하세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                        child: InputField(hint: '회사명을 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '사업자번호 확인', press: (){}),
+                                      SmallButton(title: '사업자번호 확인', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                     ],
                                   ),
                                   const SizedBox(height: 5,),
@@ -117,10 +118,10 @@ class _JoinViewState extends State<JoinView> {
                                     children: [
                                       const SizedBox(
                                         width: 310,
-                                        child: InputField(hint: '사업자 등록증을 첨부해주세요. (필수)', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                        child: InputField(hint: '사업자 등록증을 첨부해주세요. (필수)', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '파일선택', press: (){}),
+                                      SmallButton(title: '파일선택', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                     ],
                                   ),
                                 ],
@@ -134,12 +135,12 @@ class _JoinViewState extends State<JoinView> {
                                   SizedBox(height: 10),
                                   SizedBox(
                                     width: 460,
-                                    child: InputField(hint: '회사 전화번호를 입력하세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                    child: InputField(hint: '회사 전화번호를 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   ),
                                   SizedBox(height: 5),
                                   SizedBox(
                                     width: 460,
-                                    child: InputField(hint: '회사 팩스번호를 입력하세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                    child: InputField(hint: '회사 팩스번호를 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   ),
                                 ],
                               ),
@@ -157,10 +158,10 @@ class _JoinViewState extends State<JoinView> {
                                 children: [
                                   const SizedBox(
                                     width: 310,
-                                    child: InputField(hint: '아이디를 입력하세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                    child: InputField(hint: '아이디를 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   ),
                                   const SizedBox(width: 10,),
-                                  SmallButton(title: '아이디 중복확인', press: (){}),
+                                  SmallButton(title: '아이디 중복확인', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                 ],
                               ),
                             ],
@@ -172,7 +173,7 @@ class _JoinViewState extends State<JoinView> {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  InputColumn(title: '비밀번호', hint: '영문대소문자 8자리 이상', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                  InputColumn(title: '비밀번호', hint: '영문대소문자 8자리 이상', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   const SizedBox(width: 20,),
                                   Column(
                                     children: [
@@ -190,7 +191,7 @@ class _JoinViewState extends State<JoinView> {
                                                       _isChecked = value!;
                                                     });
                                                   },
-                                                  activeColor: primaryBlue,
+                                                  activeColor: primaryBlueColor,
                                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                                                 ),
                                                 const Text("이용약관과 개인정보취급방침에 동의 (필수)", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),),
@@ -215,7 +216,7 @@ class _JoinViewState extends State<JoinView> {
                                                       _isChecked2 = value!;
                                                     });
                                                   },
-                                                  activeColor: primaryBlue,
+                                                  activeColor: primaryBlueColor,
                                                   shape: RoundedRectangleBorder(
                                                       borderRadius: BorderRadius.circular(5)
                                                   ),
@@ -236,7 +237,7 @@ class _JoinViewState extends State<JoinView> {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  InputColumn(title: '비밀번호 확인', hint: '다시 한 번 비밀번호를 입력해주세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
+                                  InputColumn(title: '비밀번호 확인', hint: '다시 한 번 비밀번호를 입력해주세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   const SizedBox(width: 20,),
                                   Column(
                                     children: [
@@ -247,7 +248,7 @@ class _JoinViewState extends State<JoinView> {
                                         child: const Text("동의하고 무료 회원가입하기", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
                                         style: ElevatedButton.styleFrom(
                                             fixedSize: const Size(460, 70),
-                                            primary: primaryBlue,
+                                            primary: primaryBlueColor,
                                             elevation: 0.0
                                           // side: const BorderSide(width: 1.0, color: Colors.indigoAccent)
                                         ),

@@ -48,7 +48,7 @@ SpecsModel specsModel = SpecsModel(
   page: '1/1',
   date: DateTime(2021, 09, 03),
   counterpart: '준하우스',
-  totalPrice: '일금칠백칠십칠만원\n     (7,770,000원)',
+  totalPrice: '일금칠백칠십칠만원\n (7,770,000원)',
   registrationNum: '876-86-00245',
   company: '(주)네이첸',
   providerName: '심현주',
