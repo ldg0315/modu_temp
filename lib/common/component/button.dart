@@ -11,10 +11,10 @@ class SmallButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: press,
-      child: Text(title, style: const TextStyle(color: smallTitleBlue, fontWeight: FontWeight.bold),),
+      child: Text(title, style: const TextStyle(color: smallTitleBlueColor, fontWeight: FontWeight.bold),),
       style: ElevatedButton.styleFrom(
           fixedSize: const Size(140, 50),
-          primary: btnGrey,
+          primary: btnGreyColor,
           side: const BorderSide(width: 1.0, color: Colors.black12),
           elevation: 0.0
       ),
@@ -38,7 +38,7 @@ class RoundedButton extends StatelessWidget {
           primary: Colors.white,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
-              side: const BorderSide(color: btnBorderGrey)
+              side: const BorderSide(color: btnBorderGreyColor)
           ),
           elevation: 0.0
         // side: const BorderSide(width: 1.0, color: primaryBlue)
