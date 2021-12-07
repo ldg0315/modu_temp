@@ -70,7 +70,7 @@ class SpecsClassicView extends StatelessWidget {
             Row(
               children: [
                 const _TextContainer(title: '거래처명', width: 100, height: 50, isTitle: true),
-                _TextContainer(title: specsModel.counterpart, width: 135, height: 50, isTitle: true),
+                _TextContainer(title: specsModel.counterpart, width: 135, height: 50, isTitle: false),
               ],
             ),
             Container(
