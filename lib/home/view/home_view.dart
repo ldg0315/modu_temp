@@ -24,33 +24,31 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Spacer(),
-            Container(
-              width: 1000,
-              padding: const EdgeInsets.all(40.0),
-              child: Column(
-                children: [
-                  const Header(isLarge: false,),
-                  const SizedBox(height: 40,),
-                  Row(
-                    children: [
-                      buyersInfo(),
-                      const SizedBox(width: 20,),
-                      sellersInfo(),
-                    ],
-                  )
-                ],
-              ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Spacer(),
+          Container(
+            width: 1000,
+            padding: const EdgeInsets.all(40.0),
+            child: Column(
+              children: [
+                const Header(isLarge: false,),
+                const SizedBox(height: 40,),
+                Row(
+                  children: [
+                    buyersInfo(),
+                    const SizedBox(width: 20,),
+                    sellersInfo(),
+                  ],
+                )
+              ],
             ),
-            const Spacer(),
-            const SideCalendar()
-          ],
-        ),
+          ),
+          const Spacer(),
+          const SideCalendar()
+        ],
       ),
     );
   }

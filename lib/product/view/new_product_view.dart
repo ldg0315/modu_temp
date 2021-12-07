@@ -30,28 +30,26 @@ class _NewProductScreenState extends State<NewProductView> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Row(
-        children: [
-          Container(
-            width: 1040,
-            padding: const EdgeInsets.all(40.0),
-            child: Column(
-              children: [
-                topRow(),
-                const SizedBox(height: 30),
-                Container(
-                  child: const Text('기본정보', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),),
-                  alignment: Alignment.centerLeft,
-                ),
-                const SizedBox(height: 20),
-                buildContainer()
-              ],
-            ),
+    return Row(
+      children: [
+        Container(
+          width: 1040,
+          padding: const EdgeInsets.all(40.0),
+          child: Column(
+            children: [
+              topRow(),
+              const SizedBox(height: 30),
+              Container(
+                child: const Text('기본정보', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),),
+                alignment: Alignment.centerLeft,
+              ),
+              const SizedBox(height: 20),
+              buildContainer()
+            ],
           ),
-          const Spacer()
-        ],
-      ),
+        ),
+        const Spacer()
+      ],
     );
   }
 

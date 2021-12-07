@@ -11,7 +11,7 @@ class SpecsClassicView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<SpecsItemModel> items = [BC, YC];
-    return SingleChildScrollView(
+    return Padding(
       padding: EdgeInsets.all(40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

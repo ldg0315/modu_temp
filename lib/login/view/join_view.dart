@@ -38,7 +38,7 @@ class _JoinViewState extends State<JoinView> {
                           const Image(image: AssetImage('assets/images/joinLogo.png')),
                           const SizedBox(height: 30),
                           Row(
-                            children: [
+                            children: const [
                               InputColumn(title: '회사명', hint: '회사명을 입력해주세요.', fillColor: inputWhite, borderColor: inputBorderGrey),
                               SizedBox(width: 20),
                               InputColumn(title: '성명', hint: '사용자의 이름을 입력해주세요.', fillColor: inputWhite, borderColor: inputBorderGrey),

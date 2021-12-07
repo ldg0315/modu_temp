@@ -34,7 +34,7 @@ class _SpecsEasyViewState extends State<SpecsEasyView> {
   @override
   Widget build(BuildContext context) {
 
-    return SingleChildScrollView(
+    return Padding(
       padding: const EdgeInsets.all(40),
       child: GestureDetector(
         onTap: (){
