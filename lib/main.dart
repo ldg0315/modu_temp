@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:modu_temp/common/provider/specs_mode_provider.dart';
-import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/login/view/login_view.dart';
-import 'package:modu_temp/specs/view/specs_classic_view.dart';
-import 'package:modu_temp/specs/view/specs_view.dart';
 import 'package:provider/provider.dart';
 
 void main() {
