@@ -4,6 +4,7 @@ import 'package:modu_temp/common/component/input_column.dart';
 import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/home/view/home_view.dart';
+import 'package:modu_temp/login/component/button.dart';
 
 class JoinView extends StatefulWidget {
   const JoinView({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class _JoinViewState extends State<JoinView> {
                                         child: InputField(hint: '사업장 주소를 입력해주세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '주소찾기', press: (){}),
+                                      SmallButton(title: '주소찾기', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12,)
                                     ],
                                   ),
                                   const SizedBox(height: 5),
@@ -82,7 +83,7 @@ class _JoinViewState extends State<JoinView> {
                                         child: InputField(hint: '전화번호 입력', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '인증번호 받기', press: (){}),
+                                      SmallButton(title: '인증번호 받기', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                     ],
                                   ),
                                   const SizedBox(height: 5),
@@ -109,7 +110,7 @@ class _JoinViewState extends State<JoinView> {
                                         child: InputField(hint: '회사명을 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '사업자번호 확인', press: (){}),
+                                      SmallButton(title: '사업자번호 확인', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                     ],
                                   ),
                                   const SizedBox(height: 5,),
@@ -120,7 +121,7 @@ class _JoinViewState extends State<JoinView> {
                                         child: InputField(hint: '사업자 등록증을 첨부해주세요. (필수)', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                       ),
                                       const SizedBox(width: 10,),
-                                      SmallButton(title: '파일선택', press: (){}),
+                                      SmallButton(title: '파일선택', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                     ],
                                   ),
                                 ],
@@ -160,7 +161,7 @@ class _JoinViewState extends State<JoinView> {
                                     child: InputField(hint: '아이디를 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                                   ),
                                   const SizedBox(width: 10,),
-                                  SmallButton(title: '아이디 중복확인', press: (){}),
+                                  SmallButton(title: '아이디 중복확인', press: (){}, width: 140, textColor: smallTitleBlueColor, bgColor: btnGreyColor, borderColor: Colors.black12),
                                 ],
                               ),
                             ],

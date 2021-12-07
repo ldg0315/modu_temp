@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:modu_temp/common/component/top_button.dart';
 import 'package:modu_temp/constant/color.dart';
+
+import 'button.dart';
 
 class HeaderLarge extends StatelessWidget {
   const HeaderLarge({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class HeaderLarge extends StatelessWidget {
         children: [
           const Text('네이첸', style: TextStyle(color: primaryBlueColor, fontSize: 35.0, fontWeight: FontWeight.bold),),
           _searchField(),
-          TopButton(title: '대금처리', press: (){}, color: btnNavyColor)
+          SmallButton(title: '대금처리', press: (){}, width: 130, bgColor: btnNavyColor)
         ],
       ),
     );

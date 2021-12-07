@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modu_temp/common/component/button.dart';
 import 'package:modu_temp/common/provider/specs_mode_provider.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:provider/provider.dart';
@@ -16,41 +17,14 @@ class BottomButtons extends StatelessWidget {
           ButtonBar(
             buttonPadding: EdgeInsets.zero,
             children: [
-              OutlinedButton(
-                onPressed: (){},
-                child: const Text('초기화하기', style: TextStyle(color: hintTextGreyColor, fontWeight: FontWeight.bold),),
-                style: OutlinedButton.styleFrom(
-                    primary: btnBorderGreyColor,
-                    fixedSize: const Size(140, 50),
-                    backgroundColor: Colors.white
-                ),
-              ),
+              SmallButton(title: '초기화하기', press: (){}, width: 140, bgColor: Colors.white, textColor: hintTextGreyColor, borderColor: btnBorderGreyColor,),
               const SizedBox(width: 5),
-              OutlinedButton(
-                onPressed: (){
-                  context.read<SpecsMode>().changeMode();
-                },
-                child: context.watch<SpecsMode>().isClassic
-                    ? const Text('이지모드', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold))
-                    : const Text('클래식모드', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold))
-                ,
-                style: OutlinedButton.styleFrom(
-                    primary: btnBorderGreyColor,
-                    fixedSize: const Size(140, 50),
-                    backgroundColor: Colors.white
-                ),
-              ),
+              context.watch<SpecsMode>().isClassic
+              ? SmallButton(title: '이지모드', press: (){context.read<SpecsMode>().changeMode();}, width: 140, bgColor:Colors.white, textColor: primaryBlueColor, borderColor: btnBorderGreyColor,)
+              : SmallButton(title: '클래식모드', press: (){context.read<SpecsMode>().changeMode();}, width: 140, bgColor:Colors.white, textColor: primaryBlueColor, borderColor: btnBorderGreyColor,)
             ],
           ),
-          OutlinedButton(
-            onPressed: (){},
-            child: const Text('전송하기', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-            style: OutlinedButton.styleFrom(
-                primary: primaryBlueColor,
-                fixedSize: const Size(280, 50),
-                backgroundColor: primaryBlueColor
-            ),
-          )
+          SmallButton(title: '전송하기', press: (){}, width: 280, bgColor: primaryBlueColor,),
         ],
       ),
     );

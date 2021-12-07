@@ -1,10 +1,10 @@
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
+import 'package:modu_temp/common/component/button.dart';
 import 'package:modu_temp/common/component/input_column.dart';
 import 'package:modu_temp/common/component/rounded_checkbox.dart';
 import 'package:modu_temp/common/component/rounded_dropdown.dart';
-import 'package:modu_temp/common/component/top_button.dart';
 import 'package:modu_temp/constant/color.dart';
 
 import '../component/image_and_product_code.dart';
@@ -120,11 +120,11 @@ class _NewProductScreenState extends State<NewProductView> {
         const Text('네이첸', style: TextStyle(color: primaryBlueColor, fontSize: 28, fontWeight: FontWeight.w900),),
         Row(
           children: [
-            TopButton(title: '상품리스트', color: primaryBlueColor, press: () {},),
+            SmallButton(title: '상품리스트', press: (){}, width: 130, bgColor: primaryBlueColor),
             const SizedBox(width: 10),
-            TopButton(title: '상품등록', color: primaryBlueColor, press: () {},),
+            SmallButton(title: '상품등록', press: (){}, width: 130, bgColor: primaryBlueColor),
             const SizedBox(width: 10),
-            TopButton(title: '대금처리', color: btnNavyColor, press: () {},),
+            SmallButton(title: '대금처리', press: (){}, width: 130, bgColor: btnNavyColor)
           ],
         ),
       ],
