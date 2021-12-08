@@ -4,7 +4,7 @@ import 'package:modu_temp/constant/text_style.dart';
 
 class SummaryCard extends StatelessWidget {
   final String logo;
-  final String thisSales;
+  final int thisSales;
   final int lastSales;
   final int unpaid;
   final bool isBuyer;
