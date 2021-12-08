@@ -5,6 +5,7 @@ import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/home/view/home_view.dart';
 import 'package:modu_temp/login/component/button.dart';
+import 'package:modu_temp/login/view/join_check_view.dart';
 
 class JoinView extends StatefulWidget {
   const JoinView({Key? key}) : super(key: key);
@@ -243,7 +244,7 @@ class _JoinViewState extends State<JoinView> {
                                     children: [
                                       ElevatedButton(
                                         onPressed: (){
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenLayOut(child: HomeView())));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => JoinCheckView()));
                                         },
                                         child: const Text("동의하고 무료 회원가입하기", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
                                         style: ElevatedButton.styleFrom(
