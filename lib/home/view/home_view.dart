@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modu_temp/common/component/header.dart';
 import 'package:modu_temp/constant/color.dart';
+import 'package:modu_temp/constant/util.dart';
 import 'package:modu_temp/home/component/side_calendar.dart';
 import 'package:modu_temp/home/component/summary_card.dart';
 
@@ -74,9 +75,9 @@ class _HomeViewState extends State<HomeView> {
             ],
           ),
           const SizedBox(height: 15),
-          const SummaryCard(
+          SummaryCard(
             logo: 'assets/images/224ECE4952E325910A.png',
-            thisSales: 21140000000,
+            thisSales: priceFormat(21140000000),
             lastSales: 140000000,
             unpaid: 80000000,
             isBuyer: true,
@@ -121,9 +122,9 @@ class _HomeViewState extends State<HomeView> {
             ],
           ),
           const SizedBox(height: 15),
-          const SummaryCard(
+          SummaryCard(
               logo: 'assets/images/224ECE4952E325910A.png',
-              thisSales: 21140000000,
+              thisSales: priceFormat(21140000000),
               lastSales: 140000000,
               unpaid: 80000000,
               isBuyer: false),
