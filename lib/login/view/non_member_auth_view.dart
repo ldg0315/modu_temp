@@ -22,7 +22,7 @@ class NonMemberAuthView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50)
             ),
             child: SizedBox(
-              child: Column(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
@@ -30,7 +30,7 @@ class NonMemberAuthView extends StatelessWidget {
                     width: 400,
                     child: ClipRRect(
                       child: Image.asset('assets/images/drawing.png', fit: BoxFit.cover),
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
                     ),
                   ),
                   Container(
@@ -38,7 +38,7 @@ class NonMemberAuthView extends StatelessWidget {
                     width: 400,
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+                        borderRadius: BorderRadius.only(bottomRight: Radius.circular(10), topRight: Radius.circular(10)),
                         color: Colors.white
                     ),
                     child: Column(
