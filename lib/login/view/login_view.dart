@@ -20,7 +20,8 @@ class _LoginScreenState extends State<LoginView> {
         children: [
           SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: Image.asset('assets/images/back.jpg', fit: BoxFit.cover,)
+              height: MediaQuery.of(context).size.height,
+              child: Image.asset('assets/images/back.png', fit: BoxFit.cover,)
           ),
           Container(
             alignment: Alignment.center,
@@ -36,14 +37,14 @@ class _LoginScreenState extends State<LoginView> {
                     width: 400,
                     child: ClipRRect(
                       child: Image.asset('assets/images/drawing.png', fit: BoxFit.cover),
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
+                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
                     ),
                   ),
                   Container(
                     height: 400,
                     width: 400,
                     padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
                         color: Colors.white
                     ),
