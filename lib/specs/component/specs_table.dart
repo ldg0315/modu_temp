@@ -1,52 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:modu_temp/common/component/header.dart';
 import 'package:modu_temp/constant/color.dart';
-import 'package:modu_temp/constant/util.dart';
-import 'package:modu_temp/specs/component/bottom_buttons.dart';
 import 'package:modu_temp/specs/model/specs_model.dart';
 import 'package:modu_temp/specs/model/specs_model_list.dart';
-import 'package:intl/intl.dart';
 
-class SpecsClassicView extends StatelessWidget {
-  SpecsClassicView({Key? key}) : super(key: key);
+class SpecsTable extends StatelessWidget {
+  const SpecsTable({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     List<SpecsItemModel> items = [BC, YC];
-    return Padding(
-      padding: EdgeInsets.all(40),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Header(isLarge: true,),
-          const SizedBox(height: 20),
-          Container(
-            width: 1045,
-            padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 5),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(10))
-            ),
-            child: Column(
-              children: [
-                topRow(),
-                // 중간 부분
-                centerTitle(),
-                for(int i = 0; i < items.length; i++)
-                  centerContent(items, i),
-                //중간 빈칸
-                for(int i=0;i<5-items.length;i++)
-                  centerEmpty(),
-                bottomTotalRow(),
-                bottomBalanceRow(),
-                bottomRow(),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          BottomButtons()
-        ],
-      ),
+
+    return Column(
+      children: [
+        topRow(),
+        // 중간 부분
+        centerTitle(),
+        for(int i = 0; i < items.length; i++)
+          centerContent(items, i),
+        //중간 빈칸
+        for(int i=0;i<5-items.length;i++)
+          centerEmpty(),
+        bottomTotalRow(),
+        bottomBalanceRow(),
+        bottomRow(),
+      ],
     );
   }
 
@@ -106,8 +83,8 @@ class SpecsClassicView extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(color: tradeBorderGreyColor),
                 // color: isTitle?innerCellBlueColor:Colors.white,
-    ),
-    )
+              ),
+            )
             // _TextContainer(title: specsModel.totalPrice, width: 320, height: 100, isTitle: false, isBold: true,),
           ],
         ),
@@ -180,10 +157,9 @@ class SpecsClassicView extends StatelessWidget {
         _TextContainer(title: items[i].detailInfo, width: 105, height: 40, isTitle: false, isBold: false,),
         _TextContainer(title: items[i].size, width: 110, height: 40, isTitle: false, isBold: false,),
         _TextContainer(title: items[i].amount.toString(), width: 105, height: 40, isTitle: false, isBold: false,),
-        // 금액에 , 넣기
-        _NumContainer(title: items[i].unitPrice, width: 130, height: 40, isTitle: false, isBold: false,),
-        _NumContainer(title: items[i].valueOfSupply, width: 130, height: 40, isTitle: false, isBold: false,),
-        _NumContainer(title: items[i].tax, width: 130, height: 40, isTitle: false, isBold: false,),
+        _NumContainer(title: items[i].unitPrice.toString(), width: 130, height: 40, isTitle: false, isBold: false,),
+        _NumContainer(title: items[i].valueOfSupply.toString(), width: 130, height: 40, isTitle: false, isBold: false,),
+        _NumContainer(title: items[i].tax.toString(), width: 130, height: 40, isTitle: false, isBold: false,),
       ],
     );
   }
@@ -219,8 +195,8 @@ class SpecsClassicView extends StatelessWidget {
           ),
         ),
         const _TextContainer(title: '합계', width: 130, height: 50, isTitle: true, isBold: false,),
-        _NumContainer(title: specsModel.total, width: 130, height: 50, isTitle: false, isBold: false,),
-        _NumContainer(title: (specsModel.total/10).floor(), width: 130, height: 50, isTitle: false, isBold: false,),
+        _NumContainer(title: specsModel.total.toString(), width: 130, height: 50, isTitle: false, isBold: false,),
+        _NumContainer(title: (specsModel.total/10).toString(), width: 130, height: 50, isTitle: false, isBold: false,),
       ],
     );
   }
@@ -230,10 +206,10 @@ class SpecsClassicView extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const _TextContainer(title: '전잔금', width: 420, height: 50, isTitle: true, isBold: true,),
-        _NumContainer(title: specsModel.exBalance, width: 215, height: 50, isTitle: false, isBold: true,),
+        _NumContainer(title: specsModel.exBalance.toString(), width: 215, height: 50, isTitle: false, isBold: true,),
         const _TextContainer(title: '', width: 130, height: 50, isTitle: false, isBold: false,),
         const _TextContainer(title: '총금액', width: 130, height: 50, isTitle: true, isBold: true,),
-        _NumContainer(title: specsModel.totalPrice2, width: 130, height: 50, isTitle: false, isBold: true,),
+        _NumContainer(title: specsModel.totalPrice2.toString(), width: 130, height: 50, isTitle: false, isBold: true,),
       ],
     );
   }
@@ -245,7 +221,7 @@ class SpecsClassicView extends StatelessWidget {
         const _TextContainer(title: '입금', width: 130, height: 50, isTitle: true, isBold: true,),
         const _TextContainer(title: '', width: 185, height: 50, isTitle: false, isBold: true,),
         const _TextContainer(title: '잔금', width: 105, height: 50, isTitle: true, isBold: true,),
-        _NumContainer(title: specsModel.balance, width: 215, height: 50, isTitle: false, isBold: true,),
+        _NumContainer(title: specsModel.balance.toString(), width: 215, height: 50, isTitle: false, isBold: true,),
         const _TextContainer(title: '', width: 130, height: 50, isTitle: false, isBold: false,),
         const _TextContainer(title: '인수자', width: 130, height: 50, isTitle: true, isBold: true,),
         _TextContainer(title: specsModel.underwriter, width: 130, height: 50, isTitle: false, isBold: true,),
@@ -278,7 +254,7 @@ class _TextContainer extends StatelessWidget {
 }
 
 class _NumContainer extends StatelessWidget {
-  final int title;
+  final String title;
   final double width;
   final double height;
   final bool isTitle;
@@ -290,7 +266,7 @@ class _NumContainer extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       alignment: Alignment.centerRight,
-      child: Text(priceFormat.format(title), textAlign: TextAlign.center, style: TextStyle(fontWeight: isBold?FontWeight.bold:null),),
+      child: Text(title, textAlign: TextAlign.center, style: TextStyle(fontWeight: isBold?FontWeight.bold:null),),
       width: width,
       height: height,
       decoration: BoxDecoration(

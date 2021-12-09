@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/constant/text_style.dart';
+import 'package:modu_temp/constant/util.dart';
 
 class SummaryCard extends StatelessWidget {
   final String logo;
@@ -29,7 +30,7 @@ class SummaryCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               isBuyer?Text('이번달 매출액', style: greyBold,):Text('이번달 매입액', style: greyBold,),
-              Text('$thisSales 원', style: bold18)
+              Text('${priceFormat.format(thisSales)} 원', style: bold18)
             ],
           ),
           SizedBox(height: 15,),
@@ -37,7 +38,7 @@ class SummaryCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               isBuyer?Text('지난달 매출액', style: greyBold):Text('지난달 매입액', style: greyBold),
-              Text('$lastSales 원', style: bold18)
+              Text('${priceFormat.format(lastSales)} 원', style: bold18)
             ],
           ),
           SizedBox(height: 15,),
@@ -45,7 +46,7 @@ class SummaryCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               isBuyer?Text('미수금', style: greyBold.copyWith(color: Colors.pink)):Text('미지급금', style: greyBold.copyWith(color: Colors.pink)),
-              Text('$unpaid 원', style: bold18.copyWith(color: Colors.pink))
+              Text('${priceFormat.format(unpaid)} 원', style: bold18.copyWith(color: Colors.pink))
             ],
           ),
           SizedBox(height: 15,),
@@ -116,7 +117,7 @@ class SummaryCardSmall extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               isBuyer?Text('이번달 매출액', style: greyBold,):Text('이번달 매입액', style: greyBold,),
-              Text('$thisSales 원', style: bold18)
+              Text('${priceFormat.format(thisSales)} 원', style: bold18)
             ],
           ),
           SizedBox(height: 15,),
@@ -124,7 +125,7 @@ class SummaryCardSmall extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               isBuyer?Text('지난달 매출액', style: greyBold):Text('지난달 매입액', style: greyBold,),
-              Text('$lastSales 원', style: bold18)
+              Text('${priceFormat.format(lastSales)} 원', style: bold18)
             ],
           ),
           SizedBox(height: 15,),
@@ -132,7 +133,7 @@ class SummaryCardSmall extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               isBuyer?Text('미수금', style: greyBold):Text('미지급금', style: greyBold),
-              Text('$unpaid 원', style: bold18)
+              Text('${priceFormat.format(unpaid)} 원', style: bold18)
             ],
           )
         ],
@@ -166,9 +167,9 @@ class UncheckedElement extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('$received', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold),),
+              Text('${priceFormat.format(received)}', style: TextStyle(color: primaryBlueColor, fontWeight: FontWeight.bold),),
               Text(' | '),
-              Text('$sent', style: TextStyle(color: Color(0xffee6d00), fontWeight: FontWeight.bold),)
+              Text('${priceFormat.format(sent)}', style: TextStyle(color: Color(0xffee6d00), fontWeight: FontWeight.bold),)
             ],
           )
         ],
