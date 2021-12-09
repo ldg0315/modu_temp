@@ -130,7 +130,7 @@ class _SpecsEasyViewState extends State<SpecsEasyView> {
 
   Container companyInfo() {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 15),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
       width: double.infinity,
       alignment: Alignment.centerLeft,
       child: SizedBox(
@@ -172,6 +172,7 @@ class _SpecsEasyViewState extends State<SpecsEasyView> {
   Positioned sumContainer() {
     return Positioned(
       bottom: 15,
+      right: 2.5,
       child: Container(
         width: 960,
         height: 150,

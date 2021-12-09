@@ -39,6 +39,7 @@ dependencies:
   intl:
   simple_gesture_detector:
   provider:
+  responsive_builder:
 
 dev_dependencies:
   flutter_test:

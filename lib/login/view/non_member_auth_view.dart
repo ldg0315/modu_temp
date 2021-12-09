@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:modu_temp/common/component/input_column.dart';
 import 'package:modu_temp/constant/color.dart';
+import 'package:modu_temp/login/view/login_view.dart';
+import 'package:modu_temp/login/view/non_member_auth_mobile_view.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class NonMemberAuthView extends StatelessWidget {
   const NonMemberAuthView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenTypeLayout(
+      mobile: NonMemberAuthMobileView(),
+      desktop: NonMemberAuthDesktopView(),
+    );
+  }
+}
+
+class NonMemberAuthDesktopView extends StatelessWidget {
+  const NonMemberAuthDesktopView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +71,9 @@ class NonMemberAuthView extends StatelessWidget {
                         const InputColumn(title: "성명", hint: '이름을 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
                         ButtonTheme(
                             child: ElevatedButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginView()));
+                              },
                               child: const Text("확인"),
                               style: ElevatedButton.styleFrom(
                                   fixedSize: const Size(400, 40),
