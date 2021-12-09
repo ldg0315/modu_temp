@@ -30,6 +30,23 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!-- Firebase Configuration -->
+<script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDpzIT1p2cqbBPOXVqjkRZpamVjmDdRdxc",
+        authDomain: "modu-temp.firebaseapp.com",
+        databaseURL: "https://modu-temp.firebaseio.com",
+        projectId: "modu-temp",
+        storageBucket: "modu-temp.appspot.com",
+        messagingSenderId: "393528168149",
+        appId: "1:393528168149:web:9108ec158c021a8d7d9c5c",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+    </script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->

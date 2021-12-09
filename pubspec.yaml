@@ -40,6 +40,9 @@ dependencies:
   simple_gesture_detector:
   provider:
   responsive_builder:
+  firebase_auth:
+  firebase_core:
+  cloud_firestore:
 
 dev_dependencies:
   flutter_test:
