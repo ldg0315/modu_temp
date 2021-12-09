@@ -3,6 +3,7 @@ import 'package:modu_temp/common/component/button.dart';
 import 'package:modu_temp/common/provider/specs_mode_provider.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:provider/provider.dart';
+import 'dart:html' as html;
 
 class BottomButtons extends StatelessWidget {
   const BottomButtons({Key? key}) : super(key: key);
@@ -24,7 +25,9 @@ class BottomButtons extends StatelessWidget {
               : SmallButton(title: '클래식모드', press: (){context.read<SpecsMode>().changeMode();}, width: 140, bgColor:Colors.white, textColor: primaryBlueColor, borderColor: btnBorderGreyColor,)
             ],
           ),
-          SmallButton(title: '전송하기', press: (){}, width: 280, bgColor: primaryBlueColor,),
+          SmallButton(title: '전송하기', press: (){
+            html.window.open('http://localhost:528/#/specs', '_blank', 'location=yes,height=800,width=1200,scrollbars=yes,status=yes');
+          }, width: 280, bgColor: primaryBlueColor,),
         ],
       ),
     );

@@ -24,33 +24,31 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Spacer(),
-          Container(
-            width: 1000,
-            padding: const EdgeInsets.all(40.0),
-            child: Column(
-              children: [
-                const Header(isLarge: false,),
-                const SizedBox(height: 40,),
-                Row(
-                  children: [
-                    buyersInfo(),
-                    const SizedBox(width: 20,),
-                    sellersInfo(),
-                  ],
-                )
-              ],
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Spacer(),
+        Container(
+          width: 1000,
+          padding: const EdgeInsets.all(40.0),
+          child: Column(
+            children: [
+              const Header(isLarge: false,),
+              const SizedBox(height: 40,),
+              Row(
+                children: [
+                  buyersInfo(),
+                  const SizedBox(width: 20,),
+                  sellersInfo(),
+                ],
+              )
+            ],
           ),
-          const Spacer(),
-          const SideCalendar()
-        ],
-      ),
+        ),
+        const Spacer(),
+        const SideCalendar()
+      ],
     );
   }
 
@@ -77,7 +75,7 @@ class _HomeViewState extends State<HomeView> {
           const SizedBox(height: 15),
           SummaryCard(
             logo: 'assets/images/224ECE4952E325910A.png',
-            thisSales: priceFormat(21140000000),
+            thisSales: 21140000000,
             lastSales: 140000000,
             unpaid: 80000000,
             isBuyer: true,
@@ -124,7 +122,7 @@ class _HomeViewState extends State<HomeView> {
           const SizedBox(height: 15),
           SummaryCard(
               logo: 'assets/images/224ECE4952E325910A.png',
-              thisSales: priceFormat(21140000000),
+              thisSales: 21140000000,
               lastSales: 140000000,
               unpaid: 80000000,
               isBuyer: false),
