@@ -181,9 +181,9 @@ class SpecsClassicView extends StatelessWidget {
         _TextContainer(title: items[i].size, width: 110, height: 40, isTitle: false, isBold: false,),
         _TextContainer(title: items[i].amount.toString(), width: 105, height: 40, isTitle: false, isBold: false,),
         // 금액에 , 넣기
-        _NumContainer(title: priceFormat.format(items[i].unitPrice), width: 130, height: 40, isTitle: false, isBold: false,),
-        _NumContainer(title: priceFormat.format(items[i].valueOfSupply), width: 130, height: 40, isTitle: false, isBold: false,),
-        _NumContainer(title: priceFormat.format(items[i].tax), width: 130, height: 40, isTitle: false, isBold: false,),
+        _NumContainer(title: items[i].unitPrice, width: 130, height: 40, isTitle: false, isBold: false,),
+        _NumContainer(title: items[i].valueOfSupply, width: 130, height: 40, isTitle: false, isBold: false,),
+        _NumContainer(title: items[i].tax, width: 130, height: 40, isTitle: false, isBold: false,),
       ],
     );
   }
@@ -219,8 +219,8 @@ class SpecsClassicView extends StatelessWidget {
           ),
         ),
         const _TextContainer(title: '합계', width: 130, height: 50, isTitle: true, isBold: false,),
-        _NumContainer(title: priceFormat.format(specsModel.total), width: 130, height: 50, isTitle: false, isBold: false,),
-        _NumContainer(title: priceFormat.format(specsModel.total/10), width: 130, height: 50, isTitle: false, isBold: false,),
+        _NumContainer(title: specsModel.total, width: 130, height: 50, isTitle: false, isBold: false,),
+        _NumContainer(title: (specsModel.total/10).floor(), width: 130, height: 50, isTitle: false, isBold: false,),
       ],
     );
   }
@@ -230,10 +230,10 @@ class SpecsClassicView extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const _TextContainer(title: '전잔금', width: 420, height: 50, isTitle: true, isBold: true,),
-        _NumContainer(title: priceFormat.format(specsModel.exBalance), width: 215, height: 50, isTitle: false, isBold: true,),
+        _NumContainer(title: specsModel.exBalance, width: 215, height: 50, isTitle: false, isBold: true,),
         const _TextContainer(title: '', width: 130, height: 50, isTitle: false, isBold: false,),
         const _TextContainer(title: '총금액', width: 130, height: 50, isTitle: true, isBold: true,),
-        _NumContainer(title: priceFormat.format(specsModel.totalPrice2), width: 130, height: 50, isTitle: false, isBold: true,),
+        _NumContainer(title: specsModel.totalPrice2, width: 130, height: 50, isTitle: false, isBold: true,),
       ],
     );
   }
@@ -245,7 +245,7 @@ class SpecsClassicView extends StatelessWidget {
         const _TextContainer(title: '입금', width: 130, height: 50, isTitle: true, isBold: true,),
         const _TextContainer(title: '', width: 185, height: 50, isTitle: false, isBold: true,),
         const _TextContainer(title: '잔금', width: 105, height: 50, isTitle: true, isBold: true,),
-        _NumContainer(title: priceFormat.format(specsModel.balance), width: 215, height: 50, isTitle: false, isBold: true,),
+        _NumContainer(title: specsModel.balance, width: 215, height: 50, isTitle: false, isBold: true,),
         const _TextContainer(title: '', width: 130, height: 50, isTitle: false, isBold: false,),
         const _TextContainer(title: '인수자', width: 130, height: 50, isTitle: true, isBold: true,),
         _TextContainer(title: specsModel.underwriter, width: 130, height: 50, isTitle: false, isBold: true,),
@@ -278,7 +278,7 @@ class _TextContainer extends StatelessWidget {
 }
 
 class _NumContainer extends StatelessWidget {
-  final String title;
+  final int title;
   final double width;
   final double height;
   final bool isTitle;
@@ -290,7 +290,7 @@ class _NumContainer extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       alignment: Alignment.centerRight,
-      child: Text(title, textAlign: TextAlign.center, style: TextStyle(fontWeight: isBold?FontWeight.bold:null),),
+      child: Text(priceFormat.format(title), textAlign: TextAlign.center, style: TextStyle(fontWeight: isBold?FontWeight.bold:null),),
       width: width,
       height: height,
       decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modu_temp/constant/color.dart';
+import 'package:modu_temp/constant/util.dart';
 import 'package:modu_temp/table_calendar/src/table_calendar.dart';
 import 'package:modu_temp/table_calendar/table_calendar.dart';
 
@@ -134,7 +135,7 @@ class DailyItem extends StatelessWidget {
           Container(
             width: double.infinity,
             alignment: Alignment.centerRight,
-            child: Text('$amount원', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16,),),
+            child: Text('${priceFormat.format(amount)}원', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16,),),
           )
         ],
       ),
