@@ -234,6 +234,7 @@ class _JoinViewState extends State<JoinView> {
                                     hint: '영문대소문자 8자리 이상',
                                     fillColor: inputWhiteColor,
                                     borderColor: inputBorderGreyColor,
+                                    isPassword: true,
                                   ),
                                   const SizedBox(width: 20,),
                                   Column(
@@ -299,11 +300,13 @@ class _JoinViewState extends State<JoinView> {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   InputColumn(
-                                      controller: controllerList[12],
-                                      title: '비밀번호 확인',
-                                      hint: '다시 한 번 비밀번호를 입력해주세요.',
-                                      fillColor: inputWhiteColor,
-                                      borderColor: inputBorderGreyColor),
+                                    controller: controllerList[12],
+                                    title: '비밀번호 확인',
+                                    hint: '다시 한 번 비밀번호를 입력해주세요.',
+                                    fillColor: inputWhiteColor,
+                                    borderColor: inputBorderGreyColor,
+                                    isPassword: true,
+                                  ),
                                   const SizedBox(width: 20,),
                                   Column(
                                     children: [

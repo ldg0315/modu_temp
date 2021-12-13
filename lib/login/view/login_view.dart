@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:modu_temp/common/component/rounded_checkbox.dart';
+import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/constant/color.dart';
+import 'package:modu_temp/home/view/home_view.dart';
+import 'package:modu_temp/login/service/firebase_auth_service.dart';
+import 'package:modu_temp/login/service/login_service_repository.dart';
 import 'package:modu_temp/login/view/join_view.dart';
 
 class LoginView extends StatefulWidget {
@@ -11,6 +15,9 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginView> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
   var _isChecked = false;
   @override
   Widget build(BuildContext context) {
@@ -72,6 +79,7 @@ class _LoginScreenState extends State<LoginView> {
                                 borderSide: BorderSide(color: primaryBlueColor, width: 2)
                             ),
                           ),
+                          controller: _emailController,
                         ),
                         const SizedBox(
                           height: 10,
@@ -93,6 +101,7 @@ class _LoginScreenState extends State<LoginView> {
                                 borderSide: BorderSide(color: primaryBlueColor, width: 2)
                             ),
                           ),
+                          controller: _passwordController,
                         ),
                         const SizedBox(height: 10),
                         Row(
@@ -127,9 +136,11 @@ class _LoginScreenState extends State<LoginView> {
                         ),
                         const SizedBox(height: 40,),
                         ElevatedButton(
-                          onPressed: (){
-                            Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => JoinView()));
+                          onPressed: () async {
+                            bool isLogin = await LoginServiceRepository().signInWithEmail(email: _emailController.text, password: _passwordController.text);
+                            if(isLogin){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScreenLayOut(child: HomeView())));
+                            }
                           },
                           child: const Text("로그인", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
                           style: ElevatedButton.styleFrom(
@@ -142,7 +153,9 @@ class _LoginScreenState extends State<LoginView> {
                         const SizedBox(height: 10,),
                         ButtonTheme(
                             child: ElevatedButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>JoinView()));
+                              },
                               child: const Text("무료로 시작해보기"),
                               style: ElevatedButton.styleFrom(
                                   fixedSize: const Size(400, 40),

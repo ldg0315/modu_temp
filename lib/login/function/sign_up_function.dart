@@ -1,17 +1,16 @@
 import 'package:modu_temp/login/db/login_firestore_crud.dart';
 import 'package:modu_temp/login/model/user_model.dart';
-import 'package:modu_temp/login/service/firebase_auth_service.dart';
+import 'package:modu_temp/login/service/login_service_repository.dart';
 import 'package:modu_temp/login/view_model/user_view_model.dart';
 
 class SignUpFunction {
-
+  final LoginServiceRepository _loginServiceRepository = LoginServiceRepository();
   final LoginFirestoreCrud _loginFirestoreCrud = LoginFirestoreCrud();
-  final FirebaseAuthService _firebaseAuthService = FirebaseAuthService();
 
   void signUpFunction(
       {required UserViewModel user}) async {
 
-    bool isCreated = await _firebaseAuthService.createUserWithEmail(user.email, user.password);
+    bool isCreated = await _loginServiceRepository.createUserWithEmail(email: user.email, password: user.password);
     print(isCreated);
     if (isCreated) {
       UserModel userModel = UserModel(
