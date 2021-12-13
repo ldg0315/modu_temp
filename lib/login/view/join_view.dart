@@ -5,6 +5,7 @@ import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/login/component/button.dart';
 import 'package:modu_temp/login/function/sign_up_function.dart';
 import 'package:modu_temp/login/view/join_check_view.dart';
+import 'package:modu_temp/login/view_model/user_view_model.dart';
 
 class JoinView extends StatefulWidget {
   const JoinView({Key? key}) : super(key: key);
@@ -308,7 +309,7 @@ class _JoinViewState extends State<JoinView> {
                                     children: [
                                       ElevatedButton(
                                         onPressed: (){
-                                          SignUpFunction().signUpFunction(
+                                          UserViewModel _user = UserViewModel(
                                               email: controllerList[10].text,
                                               password: controllerList[11].text,
                                               companyName: controllerList[0].text,
@@ -318,9 +319,10 @@ class _JoinViewState extends State<JoinView> {
                                               regNum: controllerList[6].text,
                                               regImgUrl: controllerList[7].text,
                                               phone: controllerList[4].text,
-                                              companyTel: controllerList[9].text,
-                                              companyFax: controllerList[10].text);
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => JoinCheckView()));
+                                              companyTel: controllerList[8].text,
+                                              companyFax: controllerList[9].text);
+                                          SignUpFunction().signUpFunction(user: _user);
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => JoinCheckView(user: _user,)));
                                         },
                                         child: const Text("동의하고 무료 회원가입하기", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
                                         style: ElevatedButton.styleFrom(
