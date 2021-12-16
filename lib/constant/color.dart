@@ -4,15 +4,15 @@ const Color primaryBlueColor = Color(0xff2F67FC);
 const Color lightGreyColor = Color(0xffe0e0e0);
 
 // button
-const Color loginBtnGreyColor = Color(0xffD6DDF2);
-const Color loginBtnBorderGreyColor = Color(0xffB9BFD1);
-const Color btnBorderGreyColor = Color(0xffDCDCDC);
+const Color loginBtnGreyColor = Color(0xffd6ddf2);
+const Color loginBtnBorderGreyColor = Color(0xffb9bfd1);
+const Color btnBorderGreyColor = Color(0xffdcdcdc);
 const Color btnNavyColor = Color(0xff081647);
 const Color btnGreyColor = Color(0xffE9ECF3);
 const Color btnBorderGrey2Color = Color(0xfff1f1f1); // 매출처 추가, 일정 추가하기
 
 //text
-const Color smallTitleBlueColor = Color(0xff77849F);
+const Color smallTitleBlueColor = Color(0xff77849f);
 const Color hintTextGreyColor = Color(0xff26272C);
 const Color textOrangeColor = Color(0xffEE6D00);
 
