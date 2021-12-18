@@ -2,8 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:modu_temp/common/provider/specs_mode_provider.dart';
+import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/login/view/non_member_auth_view.dart';
+import 'package:modu_temp/product/view/new_product_view.dart';
 import 'package:modu_temp/specs/view/specs_popup_view.dart';
+import 'package:modu_temp/test_screen.dart';
+import 'package:modu_temp/test_screen2.dart';
 import 'package:provider/provider.dart';
 import 'login/view/login_view.dart';
 
@@ -26,7 +30,10 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialRoute: '/',
               routes: {
-                '/': (context) => const NonMemberAuthView(),
+                //'/': (context) => const TestImportScreen(),
+                '/': (context) => const TestScreen2(),
+                //'/': (context) => const ScreenLayOut(child: NewProductView()),
+                //'/': (context) => const NonMemberAuthView(),
                 '/specs': (context) => const SpecsPopupView()
               },
             ));
