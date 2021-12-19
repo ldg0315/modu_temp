@@ -74,10 +74,8 @@ class TestImportScreen extends StatelessWidget {
                     _companyController.text = '';
                     _nameController.text = '';
                     _codeController.text = '';
-
-
                 }catch(e){
-
+                  print(e);
                 }
               },
             )

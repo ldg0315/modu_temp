@@ -1,34 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:modu_temp/test_import_screen.dart';
+import 'package:provider/provider.dart';
 
-class TestScreen2 extends StatefulWidget {
+import 'common/provider/test_provider.dart';
+
+class TestScreen2 extends StatelessWidget {
   const TestScreen2({Key? key}) : super(key: key);
 
   @override
-  State<TestScreen2> createState() => _TestScreen2State();
-}
-
-class _TestScreen2State extends State<TestScreen2> {
-  late String search;
-  TextEditingController _controller = TextEditingController();
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    search = '';
-  }
-
-  @override
   Widget build(BuildContext context) {
+    TextEditingController _controller = TextEditingController();
+
     return StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance
             .collection('products')
             //.where('company', isEqualTo: 'ABC')
             .snapshots(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) return LinearProgressIndicator();
+          if (!snapshot.hasData) return const LinearProgressIndicator();
 
           return Scaffold(
             body: Row(
@@ -43,13 +33,11 @@ class _TestScreen2State extends State<TestScreen2> {
                         child: KeyboardListener(
                             focusNode: FocusNode(),
                             onKeyEvent: (event) {
-                              setState(() {
-                                search = _controller.text;
-                              });
+                              context.read<TestProvider>().changeSearch(_controller.text);
                             },
                             child: TextField(controller: _controller)),
                       ),
-                      search != ''
+                      context.watch<TestProvider>().search != ''
                           ? SizedBox(
                               width: 200,
                               height: 300,
@@ -57,7 +45,7 @@ class _TestScreen2State extends State<TestScreen2> {
                                   children: snapshot.data!.docs.map((e) {
                                 if (e['name']
                                     .toString()
-                                    .contains(_controller.text)) {
+                                    .contains(context.watch<TestProvider>().search)) {
                                   return Text(e['name']);
                                 }
                                 return Container();
@@ -76,7 +64,7 @@ class _TestScreen2State extends State<TestScreen2> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => TestImportScreen()));
+                        builder: (context) => const TestImportScreen()));
               },
             ),
           );
