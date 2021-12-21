@@ -6,8 +6,9 @@ class InputColumn extends StatelessWidget {
   final String hint;
   final Color fillColor;
   final Color borderColor;
-  //final TextEditingController controller;
-  const InputColumn({Key? key, required this.title, required this.hint, required this.fillColor, required this.borderColor}) : super(key: key);
+  final TextEditingController controller;
+  final bool? isPassword;
+  const InputColumn({Key? key, required this.title, required this.hint, required this.fillColor, required this.borderColor, required this.controller, this.isPassword}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class InputColumn extends StatelessWidget {
         children: [
           Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),),
           const SizedBox(height: 10,),
-          InputField(hint: hint, fillColor: fillColor, borderColor: borderColor),
+          InputField(hint: hint, fillColor: fillColor, borderColor: borderColor, controller: controller, isPassword: isPassword??false,),
         ],
       ),
     );
@@ -29,7 +30,9 @@ class InputField extends StatelessWidget {
   final String hint;
   final Color fillColor;
   final Color borderColor;
-  const InputField({Key? key, required this.hint, required this.fillColor, required this.borderColor}) : super(key: key);
+  final TextEditingController controller;
+  final bool? isPassword;
+  const InputField({Key? key, required this.hint, required this.fillColor, required this.borderColor, required this.controller, this.isPassword}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +41,13 @@ class InputField extends StatelessWidget {
         labelText: hint,
         fillColor: fillColor,
         filled: true,
-        floatingLabelStyle: TextStyle(color: primaryBlueColor),
+        floatingLabelStyle: const TextStyle(color: primaryBlueColor),
         border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
         enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: borderColor)),
         focusedBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: primaryBlueColor, width: 2)),
       ),
-      //controller: controller,
+      obscureText: isPassword!=null? isPassword!?true:false :false,
+      controller: controller,
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/home/view/home_view.dart';
+import 'package:modu_temp/login/service/firebase_auth_service.dart';
 import 'package:modu_temp/login/view/login_view.dart';
 import 'package:modu_temp/product/view/new_product_view.dart';
 import 'package:modu_temp/specs/view/specs_view.dart';
@@ -52,7 +53,18 @@ class SideMenu extends StatelessWidget {
               ),
               SideListTile(icon: Icons.account_box_outlined, title: '견적서 관리'),
               SideListTile(icon: Icons.headset_mic_outlined, title: '고객센터'),
-              SideListTile(icon: Icons.exit_to_app, title: '로그아웃', child: LoginView(),),
+              ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                leading: Icon(Icons.exit_to_app, color: Colors.white54,
+                ),
+                title: Text('로그아웃', style: const TextStyle(color: Colors.white54),
+                ),
+                onTap: () {
+                  FirebaseAuthService().signOut();
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
+                },
+                hoverColor: const Color(0x7E8989D9),
+              ),
               Padding(
                 padding: EdgeInsets.only(top: 30.0, left: 16.0, bottom: 10.0),
                 child: Text('GENERAL', style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.w800),),
@@ -102,9 +114,7 @@ class SideListTile extends StatelessWidget {
           : null,
       onTap: () {
         if (child != null) {
-          child is LoginView
-              ? Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()))
-              : Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenLayOut(child: child!)));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenLayOut(child: child!)));
         }
       },
       hoverColor: const Color(0x7E8989D9),

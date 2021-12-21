@@ -54,7 +54,12 @@ class NonMemberAuthMobileView extends StatelessWidget {
                         const SizedBox(height: 20,),
                         const Text("거래처에서 전송한 거래명세서가 있습니다.\n            아래항목을 입력해 주세요.", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0, color: textOrangeColor),),
                         const SizedBox(height: 35.0),
-                        const InputColumn(title: "성명", hint: '이름을 입력하세요.', fillColor: inputWhiteColor, borderColor: inputBorderGreyColor),
+                        InputColumn(
+                            controller: TextEditingController(),
+                            title: "성명",
+                            hint: '이름을 입력하세요.',
+                            fillColor: inputWhiteColor,
+                            borderColor: inputBorderGreyColor),
                         ButtonTheme(
                             child: ElevatedButton(
                               onPressed: (){

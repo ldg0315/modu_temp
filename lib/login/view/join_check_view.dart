@@ -3,9 +3,12 @@ import 'package:modu_temp/common/component/button.dart';
 import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/home/view/home_view.dart';
+import 'package:modu_temp/login/view_model/user_view_model.dart';
 
 class JoinCheckView extends StatelessWidget {
-  const JoinCheckView({Key? key}) : super(key: key);
+  final UserViewModel user;
+
+  const JoinCheckView({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +25,25 @@ class JoinCheckView extends StatelessWidget {
                   const SizedBox(height: 10,),
                   Text('가입 정보 확인', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                   const SizedBox(height: 20,),
-                  CheckColumn(title: '회사명', content: '(주)네이첸', isWide: true),
+                  CheckColumn(title: '회사명', content: user.companyName, isWide: true),
                   const SizedBox(height: 20),
-                  CheckColumn(title: '사업자등록번호', content: '876-86-00245', isWide: true),
+                  CheckColumn(title: '사업자등록번호', content: user.regNum, isWide: true),
                   const SizedBox(height: 20,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CheckColumn(title: '아이디', content: 'SWCHOI@NAVER.COM'),
+                      CheckColumn(title: '아이디', content: user.email),
                       const SizedBox(width: 10),
-                      CheckColumn(title: '이름', content: '최성우'),
+                      CheckColumn(title: '이름', content: user.name),
                     ],
                   ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CheckColumn(title: '전화번호', content: '052-256-8907'),
+                      CheckColumn(title: '전화번호', content: user.companyTel),
                       const SizedBox(width: 10),
-                      CheckColumn(title: '휴대전화', content: '010-1234-5678'),
+                      CheckColumn(title: '휴대전화', content: user.phone),
                     ],
                   ),
                   SizedBox(child: Divider(height: 40,), width: 460,),

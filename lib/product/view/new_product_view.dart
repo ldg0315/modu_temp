@@ -61,10 +61,20 @@ class _NewProductScreenState extends State<NewProductView> {
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              InputColumn(title: '상품코드', hint: '상품코드를 입력하세요.', fillColor: innerCellBlueColor, borderColor: tradeBorderGreyColor),
+            children: [
+              InputColumn(
+                  controller: TextEditingController(),
+                  title: '상품코드',
+                  hint: '상품코드를 입력하세요.',
+                  fillColor: innerCellBlueColor,
+                  borderColor: tradeBorderGreyColor),
               SizedBox(width: 20),
-              InputColumn(title: '상품명', hint: '상품명을 입력하세요.', fillColor: innerCellBlueColor, borderColor: tradeBorderGreyColor)
+              InputColumn(
+                  controller: TextEditingController(),
+                  title: '상품명',
+                  hint: '상품명을 입력하세요.',
+                  fillColor: innerCellBlueColor,
+                  borderColor: tradeBorderGreyColor)
             ],
           ),
           const SizedBox(height: 10),
@@ -84,7 +94,12 @@ class _NewProductScreenState extends State<NewProductView> {
           categoryColumn(),
           const SizedBox(height: 30),
           Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const InputColumn(title: '제조사', hint: '예: 네이첸', fillColor: innerCellBlueColor, borderColor: tradeBorderGreyColor),
+            InputColumn(
+                controller: TextEditingController(),
+                title: '제조사',
+                hint: '예: 네이첸',
+                fillColor: innerCellBlueColor,
+                borderColor: tradeBorderGreyColor),
             const SizedBox(width: 20),
             countryColumn()
           ]),
@@ -92,8 +107,14 @@ class _NewProductScreenState extends State<NewProductView> {
           Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const InputColumn(title: '규격', hint: '예: 몰딩 그레이 100', fillColor: innerCellBlueColor, borderColor: tradeBorderGreyColor),
-                const SizedBox(width: 20),
+                InputColumn(
+              controller: TextEditingController(),
+              title: '규격',
+              hint: '예: 몰딩 그레이 100',
+              fillColor: innerCellBlueColor,
+              borderColor: tradeBorderGreyColor,
+            ),
+            const SizedBox(width: 20),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
