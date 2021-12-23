@@ -3,9 +3,10 @@ import 'package:modu_temp/common/component/button.dart';
 import 'package:modu_temp/common/component/input_column.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/login/component/button.dart';
-import 'package:modu_temp/login/function/sign_up_function.dart';
-import 'package:modu_temp/login/view/join_check_view.dart';
-import 'package:modu_temp/login/view_model/user_view_model.dart';
+import 'package:modu_temp/login/component/password_field.dart';
+import 'package:modu_temp/login/view_model/join_view_model.dart';
+
+import 'join_check_view.dart';
 
 class JoinView extends StatefulWidget {
   const JoinView({Key? key}) : super(key: key);
@@ -20,10 +21,7 @@ class _JoinViewState extends State<JoinView> {
 
   @override
   Widget build(BuildContext context) {
-    List<TextEditingController> controllerList = [];
-    for(int i=0;i<13;i++){
-      controllerList.add(TextEditingController());
-    }
+    JoinViewModel _joinViewModel = JoinViewModel();
 
     return Scaffold(
       body: SafeArea(
@@ -47,17 +45,17 @@ class _JoinViewState extends State<JoinView> {
                           Row(
                             children: [
                               InputColumn(
-                                controller: controllerList[0],
+                                controller: _joinViewModel.controllerList[0],
                                 title: '회사명',
-                                hint: '회사명을 입력해주세요.',
+                                hint: '회사명을 입력해 주세요.',
                                 fillColor: inputWhiteColor,
                                 borderColor: inputBorderGreyColor,
                               ),
                               SizedBox(width: 20),
                               InputColumn(
-                                controller: controllerList[1],
+                                controller: _joinViewModel.controllerList[1],
                                 title: '성명',
-                                hint: '사용자의 이름을 입력해주세요.',
+                                hint: '사용자의 이름을 입력해 주세요.',
                                 fillColor: inputWhiteColor,
                                 borderColor: inputBorderGreyColor,
                               ),
@@ -76,8 +74,8 @@ class _JoinViewState extends State<JoinView> {
                                       SizedBox(
                                         width: 310,
                                         child: InputField(
-                                            controller: controllerList[2],
-                                            hint: '사업장 주소를 입력해주세요.',
+                                            controller: _joinViewModel.controllerList[2],
+                                            hint: '사업장 주소를 입력해 주세요.',
                                             fillColor: inputWhiteColor,
                                             borderColor: inputBorderGreyColor),
                                       ),
@@ -89,8 +87,8 @@ class _JoinViewState extends State<JoinView> {
                                   SizedBox(
                                     width: 460,
                                     child: InputField(
-                                        controller: controllerList[3],
-                                        hint: '상세주소를 입력하세요.',
+                                        controller: _joinViewModel.controllerList[3],
+                                        hint: '상세주소를 입력해 주세요.',
                                         fillColor: inputWhiteColor,
                                         borderColor: inputBorderGreyColor),
                                   ),
@@ -107,7 +105,7 @@ class _JoinViewState extends State<JoinView> {
                                       SizedBox(
                                         width: 310,
                                         child: InputField(
-                                            controller: controllerList[4],
+                                            controller: _joinViewModel.controllerList[4],
                                             hint: '전화번호 입력',
                                             fillColor: inputWhiteColor,
                                             borderColor: inputBorderGreyColor),
@@ -120,8 +118,8 @@ class _JoinViewState extends State<JoinView> {
                                   SizedBox(
                                     width: 460,
                                     child: InputField(
-                                        controller: controllerList[5],
-                                        hint: '인증번호를 입력하세요.',
+                                        controller: _joinViewModel.controllerList[5],
+                                        hint: '인증번호를 입력해 주세요.',
                                         fillColor: inputWhiteColor,
                                         borderColor: inputBorderGreyColor),
                                   ),
@@ -142,8 +140,8 @@ class _JoinViewState extends State<JoinView> {
                                       SizedBox(
                                         width: 310,
                                         child: InputField(
-                                            controller: controllerList[6],
-                                            hint: '회사명을 입력하세요.',
+                                            controller: _joinViewModel.controllerList[6],
+                                            hint: '사업자등록번호를 입력해 주세요.',
                                             fillColor: inputWhiteColor,
                                             borderColor: inputBorderGreyColor),
                                       ),
@@ -157,8 +155,8 @@ class _JoinViewState extends State<JoinView> {
                                       SizedBox(
                                         width: 310,
                                         child: InputField(
-                                            controller: controllerList[7],
-                                            hint: '사업자 등록증을 첨부해주세요. (필수)',
+                                            controller: _joinViewModel.controllerList[7],
+                                            hint: '사업자 등록증 첨부 (필수)',
                                             fillColor: inputWhiteColor,
                                             borderColor: inputBorderGreyColor),
                                       ),
@@ -178,8 +176,8 @@ class _JoinViewState extends State<JoinView> {
                                   SizedBox(
                                     width: 460,
                                     child: InputField(
-                                        controller: controllerList[8],
-                                        hint: '회사 전화번호를 입력하세요.',
+                                        controller: _joinViewModel.controllerList[8],
+                                        hint: '회사 전화번호를 입력해 주세요.',
                                         fillColor: inputWhiteColor,
                                         borderColor: inputBorderGreyColor),
                                   ),
@@ -187,8 +185,8 @@ class _JoinViewState extends State<JoinView> {
                                   SizedBox(
                                     width: 460,
                                     child: InputField(
-                                        controller: controllerList[9],
-                                        hint: '회사 팩스번호를 입력하세요.',
+                                        controller: _joinViewModel.controllerList[9],
+                                        hint: '회사 팩스번호를 입력해 주세요.',
                                         fillColor: inputWhiteColor,
                                         borderColor: inputBorderGreyColor),
                                   ),
@@ -209,8 +207,8 @@ class _JoinViewState extends State<JoinView> {
                                   SizedBox(
                                     width: 310,
                                     child: InputField(
-                                        controller: controllerList[10],
-                                        hint: '아이디를 입력하세요.',
+                                        controller: _joinViewModel.controllerList[10],
+                                        hint: '아이디를 입력해 주세요.',
                                         fillColor: inputWhiteColor,
                                         borderColor: inputBorderGreyColor,
                                     ),
@@ -228,13 +226,12 @@ class _JoinViewState extends State<JoinView> {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  InputColumn(
-                                    controller: controllerList[11],
+                                  PasswordField(
+                                    controller: _joinViewModel.controllerList[11],
                                     title: '비밀번호',
                                     hint: '영문대소문자 8자리 이상',
                                     fillColor: inputWhiteColor,
                                     borderColor: inputBorderGreyColor,
-                                    isPassword: true,
                                   ),
                                   const SizedBox(width: 20,),
                                   Column(
@@ -299,33 +296,20 @@ class _JoinViewState extends State<JoinView> {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  InputColumn(
-                                    controller: controllerList[12],
+                                  PasswordField(
+                                    controller: _joinViewModel.controllerList[12],
                                     title: '비밀번호 확인',
-                                    hint: '다시 한 번 비밀번호를 입력해주세요.',
+                                    hint: '다시 한 번 비밀번호를 입력해 주세요.',
                                     fillColor: inputWhiteColor,
                                     borderColor: inputBorderGreyColor,
-                                    isPassword: true,
                                   ),
                                   const SizedBox(width: 20,),
                                   Column(
                                     children: [
                                       ElevatedButton(
                                         onPressed: (){
-                                          UserViewModel _user = UserViewModel(
-                                              email: controllerList[10].text,
-                                              password: controllerList[11].text,
-                                              companyName: controllerList[0].text,
-                                              name: controllerList[1].text,
-                                              address: controllerList[2].text,
-                                              addressDetail: controllerList[3].text,
-                                              regNum: controllerList[6].text,
-                                              regImgUrl: controllerList[7].text,
-                                              phone: controllerList[4].text,
-                                              companyTel: controllerList[8].text,
-                                              companyFax: controllerList[9].text);
-                                          SignUpFunction().signUpFunction(user: _user);
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => JoinCheckView(user: _user,)));
+                                          _joinViewModel.submitForm();
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => JoinCheckView()));
                                         },
                                         child: const Text("동의하고 무료 회원가입하기", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
                                         style: ElevatedButton.styleFrom(
@@ -335,7 +319,6 @@ class _JoinViewState extends State<JoinView> {
                                           // side: const BorderSide(width: 1.0, color: Colors.indigoAccent)
                                         ),
                                       ),
-                                      SizedBox(height: 5,)
                                     ],
                                   ),
                                 ],
@@ -354,3 +337,4 @@ class _JoinViewState extends State<JoinView> {
     );
   }
 }
+

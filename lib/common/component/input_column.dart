@@ -7,8 +7,7 @@ class InputColumn extends StatelessWidget {
   final Color fillColor;
   final Color borderColor;
   final TextEditingController controller;
-  final bool? isPassword;
-  const InputColumn({Key? key, required this.title, required this.hint, required this.fillColor, required this.borderColor, required this.controller, this.isPassword}) : super(key: key);
+  const InputColumn({Key? key, required this.title, required this.hint, required this.fillColor, required this.borderColor, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class InputColumn extends StatelessWidget {
         children: [
           Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),),
           const SizedBox(height: 10,),
-          InputField(hint: hint, fillColor: fillColor, borderColor: borderColor, controller: controller, isPassword: isPassword??false,),
+          InputField(hint: hint, fillColor: fillColor, borderColor: borderColor, controller: controller,),
         ],
       ),
     );
@@ -31,8 +30,7 @@ class InputField extends StatelessWidget {
   final Color fillColor;
   final Color borderColor;
   final TextEditingController controller;
-  final bool? isPassword;
-  const InputField({Key? key, required this.hint, required this.fillColor, required this.borderColor, required this.controller, this.isPassword}) : super(key: key);
+  const InputField({Key? key, required this.hint, required this.fillColor, required this.borderColor, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +44,6 @@ class InputField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: borderColor)),
         focusedBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: primaryBlueColor, width: 2)),
       ),
-      obscureText: isPassword!=null? isPassword!?true:false :false,
       controller: controller,
     );
   }

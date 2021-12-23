@@ -3,15 +3,17 @@ import 'package:modu_temp/common/component/button.dart';
 import 'package:modu_temp/common/view/screen_layout.dart';
 import 'package:modu_temp/constant/color.dart';
 import 'package:modu_temp/home/view/home_view.dart';
-import 'package:modu_temp/login/view_model/user_view_model.dart';
+import 'package:modu_temp/login/view_model/join_view_model.dart';
 
 class JoinCheckView extends StatelessWidget {
-  final UserViewModel user;
 
-  const JoinCheckView({Key? key, required this.user}) : super(key: key);
+  const JoinCheckView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    JoinViewModel _joinViewModel = JoinViewModel();
+    print(_joinViewModel.userViewModel.phone);
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -23,27 +25,27 @@ class JoinCheckView extends StatelessWidget {
                 children: [
                   const Image(image: AssetImage('assets/images/joinLogo.png')),
                   const SizedBox(height: 10,),
-                  Text('가입 정보 확인', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  const Text('가입 정보 확인', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                   const SizedBox(height: 20,),
-                  CheckColumn(title: '회사명', content: user.companyName, isWide: true),
+                  CheckColumn(title: '회사명', content: _joinViewModel.userViewModel.companyName, isWide: true),
                   const SizedBox(height: 20),
-                  CheckColumn(title: '사업자등록번호', content: user.regNum, isWide: true),
+                  CheckColumn(title: '사업자등록번호', content: _joinViewModel.userViewModel.regNum, isWide: true),
                   const SizedBox(height: 20,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CheckColumn(title: '아이디', content: user.email),
+                      CheckColumn(title: '아이디', content: _joinViewModel.userViewModel.email),
                       const SizedBox(width: 10),
-                      CheckColumn(title: '이름', content: user.name),
+                      CheckColumn(title: '이름', content: _joinViewModel.userViewModel.name),
                     ],
                   ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CheckColumn(title: '전화번호', content: user.companyTel),
+                      CheckColumn(title: '전화번호', content: _joinViewModel.userViewModel.companyTel),
                       const SizedBox(width: 10),
-                      CheckColumn(title: '휴대전화', content: user.phone),
+                      CheckColumn(title: '휴대전화', content: _joinViewModel.userViewModel.phone),
                     ],
                   ),
                   SizedBox(child: Divider(height: 40,), width: 460,),

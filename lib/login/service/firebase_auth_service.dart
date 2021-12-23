@@ -24,15 +24,25 @@ class FirebaseAuthService{
   }
 
   Future<bool> signInWithEmail(String email, String password) async{
-    UserCredential userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
-    if(userCredential.user != null){
-      return true;
+    try{
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      if(userCredential.user != null){
+        return true;
+      }
+    }catch (e){
+      print(e);
     }
+
     return false;
   }
 
   void signOut() {
-    _auth.signOut();
+    try{
+      _auth.signOut();
+    }catch(e){
+      print(e);
+    }
+
   }
 
 }

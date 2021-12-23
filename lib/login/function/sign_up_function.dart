@@ -7,11 +7,10 @@ class SignUpFunction {
   final LoginServiceRepository _loginServiceRepository = LoginServiceRepository();
   final LoginFirestoreCrud _loginFirestoreCrud = LoginFirestoreCrud();
 
-  void signUpFunction(
+  Future<void> signUpFunction(
       {required UserViewModel user}) async {
 
     bool isCreated = await _loginServiceRepository.createUserWithEmail(email: user.email, password: user.password);
-    print(isCreated);
     if (isCreated) {
       UserModel userModel = UserModel(
           email: user.email,
@@ -25,7 +24,7 @@ class SignUpFunction {
           companyTel: user.companyTel,
           companyFax: user.companyFax);
 
-      _loginFirestoreCrud.addUserData(userModel);
+      await _loginFirestoreCrud.addUserData(userModel);
     }
   }
 }
